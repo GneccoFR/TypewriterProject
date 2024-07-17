@@ -11,7 +11,6 @@ public class TypewriterMachine : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private Button _button;
     [SerializeField] private float _timeBetweenCharacters;
-    [SerializeField] private float _timeBetweenWords;
     [SerializeField] private List<string> _strings = new List<string>();
     private int i = 0;
     private bool _isShowing = false;
@@ -20,7 +19,8 @@ public class TypewriterMachine : MonoBehaviour
 
     private void Start()
     {
-        _button.onClick.AddListener(StartOrEndSentence);
+        if (_button != null)
+            _button.onClick.AddListener(StartOrEndSentence);
     }
 
     public void LoadStrings(List<string> messages)
