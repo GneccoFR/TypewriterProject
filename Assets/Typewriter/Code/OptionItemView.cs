@@ -22,4 +22,9 @@ public class OptionItemView : MonoBehaviour
     {
         _button.onClick.AddListener(action);
     }
+
+    public void ClearListener()
+    {
+        _button.onClick.RemoveAllListeners();
+    }
 }
